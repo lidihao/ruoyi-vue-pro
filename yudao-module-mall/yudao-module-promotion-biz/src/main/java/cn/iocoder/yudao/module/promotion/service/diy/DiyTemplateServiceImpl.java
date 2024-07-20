@@ -44,6 +44,7 @@ public class DiyTemplateServiceImpl implements DiyTemplateService {
         // 插入
         DiyTemplateDO diyTemplate = DiyTemplateConvert.INSTANCE.convert(createReqVO);
         diyTemplate.setProperty("{}");
+        diyTemplate.setUsed(false);
         diyTemplateMapper.insert(diyTemplate);
         // 创建默认页面
         createDefaultPage(diyTemplate);
